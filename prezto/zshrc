@@ -4,7 +4,9 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-export TERM="xterm-256color"
+
+#export TERM="xterm-256color"
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -12,13 +14,17 @@ fi
 
 # Customize to your needs...
 
-POWERLEVEL9K_MODE="awesome-fontconfig"
+#POWERLEVEL9K_MODE="awesome-fontconfig"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
 POWERLEVEL9K_STATUS_VERBOSE=false
 #POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 #POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+
+#Truncate directory path:
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+#Don't display user at prompt:
 export DEFAULT_USER=$USER
