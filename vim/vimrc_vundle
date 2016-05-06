@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'pearofducks/ansible-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,6 +33,12 @@ set number
 highlight LineNr ctermfg=grey
 
 let g:airline_powerline_fonts = 1
+
+" Ansible specific options
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+let g:ansible_attribute_highlight = "ab"
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_keywords_highlight = 1
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
