@@ -10,10 +10,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" All of your Plugins must be added before the following line
 Plugin 'vim-airline/vim-airline'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'altercation/vim-colors-solarized'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 " filetype plugin indent on    " required
 
@@ -45,6 +48,11 @@ let g:ansible_extra_keywords_highlight = 1
 if has('mouse')
 	set mouse=a
 endif
+
+" Nerdtree file explorer toggle with Ctrl + n
+map <C-n> :NERDTreeToggle<CR>
+" Colse vim if only NERDTree is left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -99,3 +107,10 @@ if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 				\ | wincmd p | diffthis
 endif
+
+"" Solarized colors
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" colorscheme solarized
