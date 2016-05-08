@@ -16,6 +16,7 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 " filetype plugin indent on    " required
@@ -31,42 +32,6 @@ call vundle#end()            " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-" Display Line Numbers on the left
-set number
-highlight LineNr ctermfg=grey
-
-let g:airline_powerline_fonts = 1
-
-" Ansible specific options
-let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
-let g:ansible_attribute_highlight = "ab"
-let g:ansible_name_highlight = 'b'
-let g:ansible_extra_keywords_highlight = 1
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-	set mouse=a
-endif
-
-" Nerdtree file explorer toggle with Ctrl + n
-map <C-n> :NERDTreeToggle<CR>
-" Colse vim if only NERDTree is left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -99,6 +64,42 @@ else
 	set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+" Ansible specific options
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+let g:ansible_attribute_highlight = "ab"
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_keywords_highlight = 1
+
+let g:airline_powerline_fonts = 1
+
+" Display Line Numbers on the left
+set number
+highlight LineNr ctermfg=grey
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+	set mouse=a
+endif
+
+" Nerdtree file explorer toggle with Ctrl + n
+map <C-n> :NERDTreeToggle<CR>
+" Colse vim if only NERDTree is left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	set hlsearch
+endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
