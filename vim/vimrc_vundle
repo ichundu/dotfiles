@@ -3,7 +3,6 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-set laststatus=2
 
 call vundle#begin()
 
@@ -21,7 +20,7 @@ Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-" filetype plugin indent on    " required
+filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -35,6 +34,18 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set laststatus=2
+syntax on
+set mouse=a
+set number			" Display Line Numbers on the left
+set relativenumber
+" highlight LineNr ctermfg=grey	" Set line number coloer
+set backspace=indent,eol,start	" allow backspacing over everything in insert mode
+set ruler			" show the cursor position all the time
+set showcmd			" display incomplete commands
+set incsearch			" do incremental searching
+set hlsearch
+
 "" Airline options
 """"""""""""""""""
 let g:airline_powerline_fonts = 1
@@ -43,15 +54,19 @@ let g:airline#extensions#tabline#tab_min_count = 2	" configure the minimum numbe
 let g:airline#extensions#tabline#buffer_min_count = 2	" don't show buffers names if opened only one file
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+" Ansible specific options
+let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
+let g:ansible_attribute_highlight = "ab"
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_keywords_highlight = 1
+
+"" NERDTREE options
+"""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif		" Close vim if only NERDTree is left open
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-	" Enable file type detection.
-	" Use the default filetype settings, so that mail gets 'tw' set to 72,
-	" 'cindent' is on in C files, etc.
-	" Also load indent files, to automatically do language-dependent indenting.
-	filetype plugin indent on
-
 	" Put these in an autocmd group, so that we can delete them easily.
 	augroup vimrcEx
 		au!
@@ -75,40 +90,6 @@ else
 
 endif " has("autocmd")
 
-" Ansible specific options
-let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
-let g:ansible_attribute_highlight = "ab"
-let g:ansible_name_highlight = 'b'
-let g:ansible_extra_keywords_highlight = 1
-
-" Display Line Numbers on the left
-set number
-highlight LineNr ctermfg=grey
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-	set mouse=a
-endif
-
-" Nerdtree file explorer toggle with Ctrl + n
-map <C-n> :NERDTreeToggle<CR>
-" Close vim if only NERDTree is left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
-endif
-
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -123,4 +104,3 @@ endif
 " let g:solarized_contrast="high"
 " let g:solarized_visibility="high"
 colorscheme 256-jungle
-
