@@ -47,10 +47,12 @@ set incsearch			" do incremental searching
 set hlsearch
 set t_Co=256
 set history=1000
+set timeoutlen=50
 
 "" Airline options
 """"""""""""""""""
 let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'powerlineish'
 let g:airline#extensions#tabline#enabled = 1		" Enable TabLine
 let g:airline#extensions#tabline#tab_min_count = 2	" configure the minimum number of tabs needed to show the tabline.
 let g:airline#extensions#tabline#buffer_min_count = 2	" don't show buffers names if opened only one file
@@ -101,9 +103,9 @@ if !exists(":DiffOrig")
 endif
 
 "" Solarized colors
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 0
-let g:solarized_contrast = "normal"
-let g:solarized_visibility = "normal"
-set background=dark
-colorscheme solarized
+" let g:solarized_termcolors = 256
+" let g:solarized_termtrans = 0
+" let g:solarized_contrast = "normal"
+" let g:solarized_visibility = "normal"
+" set background=dark
+colorscheme molokai
