@@ -45,6 +45,8 @@ set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set incsearch			" do incremental searching
 set hlsearch
+set t_Co=256
+set history=1000
 
 "" Airline options
 """"""""""""""""""
@@ -103,4 +105,4 @@ endif
 " let g:solarized_termtrans=1
 " let g:solarized_contrast="high"
 " let g:solarized_visibility="high"
-colorscheme 256-jungle
+colorscheme Benokai
