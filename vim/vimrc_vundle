@@ -101,8 +101,9 @@ if !exists(":DiffOrig")
 endif
 
 "" Solarized colors
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" let g:solarized_contrast="high"
-" let g:solarized_visibility="high"
-colorscheme Benokai
+let g:solarized_termcolors = 256
+let g:solarized_termtrans = 0
+let g:solarized_contrast = "normal"
+let g:solarized_visibility = "normal"
+set background=dark
+colorscheme solarized
