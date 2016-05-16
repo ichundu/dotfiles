@@ -48,8 +48,6 @@ set hlsearch
 set t_Co=256
 set history=1000
 set timeoutlen=50
-"highlight Normal ctermbg=7
-"highlight nonText ctermbg=black
 
 "" Airline options
 """"""""""""""""""
