@@ -20,6 +20,7 @@ Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
@@ -58,13 +59,13 @@ let g:airline#extensions#tabline#tab_min_count = 2	" configure the minimum numbe
 let g:airline#extensions#tabline#buffer_min_count = 2	" don't show buffers names if opened only one file
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_mode_map = {
-			\ 'n' : 'N',
-			\ 'i' : 'I',
-			\ 'R' : 'R',
-			\ 'c' : 'C',
-			\ 'v' : 'V',
-			\ }
+"let g:airline_mode_map = {
+"			\ 'n' : 'N',
+"			\ 'i' : 'I',
+"			\ 'R' : 'R',
+"			\ 'c' : 'C',
+"			\ 'v' : 'V',
+"			\ }
 
 " Ansible specific options
 let g:ansible_extra_syntaxes = "sh.vim ruby.vim"
