@@ -17,6 +17,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -111,10 +112,14 @@ if !exists(":DiffOrig")
 				\ | wincmd p | diffthis
 endif
 
-"" Solarized colors
+"" Solarized colorscheme
 "let g:solarized_termcolors = 256
 "let g:solarized_termtrans = 0
 "let g:solarized_contrast = "normal"
 "let g:solarized_visibility = "normal"
 "set background=dark
-colorscheme molokai
+
+colorscheme molokai		" Set colorscheme
+
+" Base16 colorscheme
+"let base16colorspace=256	" Access colors present in 256 colorspace
