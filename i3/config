@@ -127,9 +127,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+x exec sh /home/ichundu/.config/i3/lock.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%	#increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%	#decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle		# mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks	#increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks	#decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle	&& pkill -RTMIN+10 i3blocks		# mute sound
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -161,6 +161,8 @@ bindsym $mod+r mode "resize"
 ################################
 
 set $bg-color 	         #2a373e
+set $ws-color		 #bcbcbc
+set $ws-text		 #2a373e
 set $inactive-bg-color   #2a373e
 set $text-color          #FDFDFD
 set $inactive-text-color #888A85
@@ -189,7 +191,7 @@ bar {
 		background $bg-color
 		separator #757575
 		#			border             	background         	text
-		focused_workspace  	$bg-color          	$bg-color          	$text-color
+		focused_workspace	$bg-color		$ws-color		$ws-text
 		inactive_workspace 	$inactive-bg-color 	$inactive-bg-color 	$inactive-text-color
 		urgent_workspace   	$urgent-bg-color   	$urgent-bg-color   	$text-color
 		}
