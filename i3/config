@@ -126,12 +126,20 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Lock the screen
 bindsym $mod+Shift+x exec sh /home/ichundu/.config/i3/lock.sh
 
+# Take screenshot
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -RTMIN+10 i3blocks	#increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -RTMIN+10 i3blocks	#decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle	&& pkill -RTMIN+10 i3blocks		# mute sound
 
-# resize window (you can also use the mouse for that)
+#pause / play / next / previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -161,7 +169,7 @@ bindsym $mod+r mode "resize"
 ################################
 
 set $bg-color 	         #2a373e
-set $ws-color		 #bcbcbc
+set $ws-color		 #fdfdfd
 set $ws-text		 #2a373e
 set $inactive-bg-color   #2a373e
 set $text-color          #FDFDFD
