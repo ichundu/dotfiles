@@ -5,6 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+#Base16 Shell
+BASE16_SHELL="$HOME/git/base16/base16-shell/base16-colors.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 export TERM="xterm-256color"
 
 POWERLEVEL9K_MODE="awesome-fontconfig"

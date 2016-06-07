@@ -41,7 +41,7 @@ syntax on
 set mouse=a
 set number			" Display Line Numbers on the left
 set relativenumber
-" highlight LineNr ctermfg=grey	" Set line number coloer
+"highlight LineNr ctermfg=grey	" Set line number coloer
 set backspace=indent,eol,start	" allow backspacing over everything in insert mode
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
@@ -112,14 +112,7 @@ if !exists(":DiffOrig")
 				\ | wincmd p | diffthis
 endif
 
-"" Solarized colorscheme
-"let g:solarized_termcolors = 256
-"let g:solarized_termtrans = 0
-"let g:solarized_contrast = "normal"
-"let g:solarized_visibility = "normal"
-"set background=dark
-
-colorscheme molokai		" Set colorscheme
-
-" Base16 colorscheme
-"let base16colorspace=256	" Access colors present in 256 colorspace
+" Colorscheme options
+set background=dark
+let base16colorspace=256	" Access colors present in 256 colorspace
+colorscheme base16-colors	" Set colorscheme
