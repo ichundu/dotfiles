@@ -1,6 +1,7 @@
 atelier-dune
 atelier-forest
 brewer
+eighties
 hopscotch
 london-tube
 oceanicnext
