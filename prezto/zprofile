@@ -72,3 +72,8 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+#
+# Aliases
+#
+alias enw="emacs -nw"
