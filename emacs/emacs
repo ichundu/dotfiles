@@ -4,11 +4,11 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-;; ==== Evil mode (vim) ====
+;; ==== Evil mode ====
 (require 'evil)
 (evil-mode 1)
 
-;; ==== Color themes ====
+;; ==== Color Theme ====
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -26,11 +26,16 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; ==== Window settings ====
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; ==== Powerline ====
 (require 'powerline)
 (powerline-default-theme)
 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(menu-bar-mode -1)
+;; ==== Relative Line Numbers ====
+;;(global-relative-line-numbers-mode)
+(global-linum-mode 1)
+(setq linum-format "%2d ")
