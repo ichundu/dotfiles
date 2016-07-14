@@ -43,7 +43,6 @@ syntax on			" Syntax highlighting
 set mouse=a			" Enable mouse support
 set number			" Display Line Numbers on the left
 set relativenumber		" Cursor line is the reference for line numbers
-"highlight LineNr ctermfg=grey	" Set line number coloer
 set backspace=indent,eol,start	" allow backspacing over everything in insert mode
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
@@ -139,4 +138,7 @@ endif
 " Colorscheme options
 set background=dark
 let base16colorspace=256		" Access colors present in 256 colorspace
-colorscheme base16-atelier-forest	" Set colorscheme
+colorscheme base16-google-dark	 	" Set colorscheme
+
+" Highlight current line number
+highlight cursorlinenr ctermfg=yellow
