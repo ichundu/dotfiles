@@ -41,3 +41,6 @@ POWERLEVEL9K_OS_ICON_FOREGROUND=black
 
 #Don't display user at prompt:
 #export DEFAULT_USER=$USER
+
+# Source vte.sh
+. /etc/profile.d/vte.sh
