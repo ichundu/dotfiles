@@ -6,7 +6,7 @@
 #
 
 #Base16 Shell
-BASE16_SHELL="$HOME/git/base16/base16-shell/scripts/base16-google-dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-google-dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 export TERM="xterm-256color"
