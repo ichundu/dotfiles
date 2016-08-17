@@ -206,6 +206,6 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec sh ~/.fehbg
+exec --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id compton -f
-exec numlockx
+exec --no-startup-id numlockx
