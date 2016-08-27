@@ -1,5 +1,5 @@
 #!/bin/bash
-lock_icon=$HOME/Pictures/lock_icons/Lock_Icon.png
+lock_icon=$HOME/.config/i3/lock_icons/1465056277_icon-114-lock.png
 tmpbg=/tmp/screen.png
 scrot "$tmpbg"
 convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
