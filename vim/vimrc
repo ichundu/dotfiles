@@ -67,6 +67,9 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
+" Theme
+let g:airline_theme = 'powerlineish'
+
 "let g:airline_theme = 'powerlineish'
 
 let g:airline#extensions#tabline#enabled = 1		" Enable TabLine
@@ -138,7 +141,9 @@ endif
 " Colorscheme options
 set background=dark
 let base16colorspace=256		" Access colors present in 256 colorspace
-colorscheme base16-phd		 	" Set colorscheme
+colorscheme onedark		 	" Set colorscheme
 
-" Highlight current line number
+" Highlighting options
 highlight cursorlinenr ctermfg=yellow
+highlight NonText ctermbg=none
+highlight Normal ctermbg=none
