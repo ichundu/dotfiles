@@ -145,6 +145,8 @@ colorscheme onedark		 	" Set colorscheme
 
 " Highlighting options
 " highlight cursorlinenr ctermfg=yellow
+" highlight Nonrmal ctermbg=none
+" highlight NonText ctermbg=none
 
 if &term =~ '256color'
 	" disable Background Color Erase (BCE) so that color schemes
