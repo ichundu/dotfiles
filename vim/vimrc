@@ -143,7 +143,7 @@ endif
 " let base16colorspace=256		" Access colors present in 256 colorspace
 
 if !exists("g:onedark_terminal_italics")
- let g:onedark_terminal_italics = 1
+	let g:onedark_terminal_italics = 1
 endif
 
 colorscheme onedark		 	" Set colorscheme
