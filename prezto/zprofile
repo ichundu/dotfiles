@@ -77,3 +77,8 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 # Aliases
 #
 alias enw="emacs -nw"
+
+#
+# Ansible
+#
+export EC2_INI_PATH=$HOME/.aws/ec2.ini
