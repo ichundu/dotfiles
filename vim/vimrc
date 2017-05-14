@@ -18,6 +18,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'tyrannicaltoucan/vim-quantum'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,6 +53,7 @@ set hlsearch
 set t_Co=256
 set history=1000
 set timeoutlen=50
+set tabstop=4
 
 
 
@@ -137,16 +140,24 @@ if !exists(":DiffOrig")
 endif
 
 
-
 " Colorscheme options
-" set background=dark
 " let base16colorspace=256		" Access colors present in 256 colorspace
 
 if !exists("g:onedark_terminal_italics")
 	let g:onedark_terminal_italics = 1
 endif
 
-colorscheme onedark		 	" Set colorscheme
+if !exists("g:quantum_italics")
+	let g:quantum_italics = 1
+endif
+
+if !exists("g:quantum_black")
+	let g:quantum_black = 1
+endif
+
+set background=dark
+set termguicolors
+colorscheme quantum
 
 " Highlighting options
 " highlight cursorlinenr ctermfg=yellow
