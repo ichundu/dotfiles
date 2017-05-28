@@ -5,9 +5,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-if [[ -d "${ZDOTDIR:-$HOME}/.zprezto/modules/prompt/external/powerlevel9k" && -f "${ZDOTDIR:-$HOME}/.local/share/fonts/fontawesome-regular.ttf" ]] then;
-    POWERLEVEL9K_MODE="awesome-fontconfig"
-fi
+POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
