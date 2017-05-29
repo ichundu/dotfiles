@@ -73,6 +73,13 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 #
-# Ansible
+# Customized zone
 #
-[ -f $HOME/.aws/ec2.ini ] && export EC2_INI_PATH=$HOME/.aws/ec2.ini
+
+# Ansible
+if [[ -f "$HOME/.aws/ec2.ini" ]] then;
+  export EC2_INI_PATH=$HOME/.aws/ec2.ini
+fi
+
+# Expand PATH
+export PATH="$HOME/bin:$PATH"
