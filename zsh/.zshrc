@@ -59,10 +59,23 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  ansible
+  command-not-found
+  common-aliases
+  dirhistory
+  dnf
+  flatpak
   git
+  kubectl
+  per-directory-history
+  pip
+  terraform
+  themes
+  tmux
+  vagrant
+  vundle
   zsh-autosuggestions
   zsh-syntax-highlighting
-  flatpak
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -95,10 +108,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias molecule='docker run --rm -it -v $(pwd):/tmp/$(basename "${PWD}") -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/$(basename "${PWD}") retr0h/molecule:latest sudo molecule'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
 
 # Cloud config env
 if [ -f ~/.cloud/env.sh ]; then
