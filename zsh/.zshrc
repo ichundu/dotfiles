@@ -67,7 +67,6 @@ plugins=(
   flatpak
   git
   kubectl
-  per-directory-history
   pip
   terraform
   themes
